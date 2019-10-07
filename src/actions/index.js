@@ -1,12 +1,11 @@
 import * as ActionTypes from './types';
+import axios from 'axios';
 
 export function fetchUsers() {
+
+    const response = axios.get('https://jsonplaceholder.typicode.com/users');
     return {
         type : ActionTypes.FETCH_USERS,
-        payload : [
-            { id : '1', name : 'Jane'},
-            { id : '2', name : 'Alex'},
-            { id : '3', name : 'Jim'}
-        ]
+        payload : response
     }
 }
